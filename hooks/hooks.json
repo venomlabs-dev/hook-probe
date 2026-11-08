@@ -1,0 +1,26 @@
+{
+  "description": "One hook of each type. Each is labelled with the type it tests.",
+  "hooks": {
+    "SessionStart": [
+      { "matcher": "compact", "hooks": [
+        { "type": "command", "command": "echo probe-command", "timeout": 5 }
+      ] }
+    ],
+    "PostToolUse": [
+      { "matcher": "Bash", "hooks": [
+        { "type": "mcp_tool", "if": "Bash(git commit*)", "server": "plugin:venom-hook-probe:venom", "tool": "get_guidance", "input": { "event": "PostToolUse", "command": "${tool_input.command}" }, "timeout": 10 },
+        { "type": "http", "if": "Bash(git push*)", "url": "https://mcp.venomlabs.dev/hooks/probe", "timeout": 10 }
+      ] }
+    ],
+    "Stop": [
+      { "hooks": [
+        { "type": "prompt", "prompt": "Return {\"ok\": true}. This is a probe hook. $ARGUMENTS", "timeout": 30 }
+      ] }
+    ],
+    "SubagentStop": [
+      { "hooks": [
+        { "type": "agent", "prompt": "Return {\"ok\": true}. This is a probe hook. $ARGUMENTS", "timeout": 60 }
+      ] }
+    ]
+  }
+}

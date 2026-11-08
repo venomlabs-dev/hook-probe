@@ -1,0 +1,12 @@
+{
+  "name": "venom-hook-probe",
+  "version": "0.0.1",
+  "description": "Test plugin from Venom Labs that checks which hook types the plugin directory accepts. Not for use.",
+  "author": { "name": "Venom Labs", "url": "https://venomlabs.dev" },
+  "homepage": "https://venomlabs.dev",
+  "repository": "https://github.com/venomlabs-dev/hook-probe",
+  "license": "MIT",
+  "privacyPolicyUrl": "https://venomlabs.dev/privacy",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json"
+}

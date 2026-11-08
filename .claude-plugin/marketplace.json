@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "venom-hook-probe",
+  "description": "Test marketplace for Venom's hook-type probe.",
+  "owner": { "name": "Venom Labs", "url": "https://venomlabs.dev" },
+  "plugins": [
+    { "name": "venom-hook-probe", "description": "Checks which hook types the plugin directory accepts.", "source": "./", "category": "development" }
+  ]
+}
